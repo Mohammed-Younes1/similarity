@@ -13,12 +13,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={cn(
-      'bg-white text-slate-900 antialiased',inter.className
-    )}>
+    <html lang="en" className={
+      'bg-white text-slate-900 antialiased'
+    }>
       <body className='min-h-screen bg-slate-50 dark:bg-slate-900 antialiased'>
         <Providers>{children}
-        {/* <Navbar></Navbar> */}
+        <Navbar></Navbar>
         </Providers>
 
         {/* allow for more height on mobile devices*/}
