@@ -1,13 +1,35 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Paragraph from '../components/ui/Paragraph'
+import LargeHeading from '../components/ui/LargeHeading'
 
-const inter = Inter({ subsets: ['latin'] })
+import type { Metadata } from 'next'
+import Paragraph from '@/components/ui/Paragraph'
+import Link from 'next/link'
+
+
+export const metadata:Metadata={
+  title:'Similarity API | Home',
+  description:'Free & open-source text smilarity API',
+}
 
 export default function Home() {
   return (
-    <main className="">
-     <Paragraph size='sm'/>
-    </main>
+    <div className="relative h-screen flex items-center justify-center overflow-x-hidden">
+      <div className='container pt-32 max-w-7xl mx-auto w-full h-full'>
+        <div className='h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start'>
+          <LargeHeading size='lg' className='three-d text-black dark:text-light-gold'>
+            Easily determine <br/> text similarity.
+          </LargeHeading>
+
+          <Paragraph className="max-w-xl lg:text-left">
+            With the text similarity API, you can easily 
+            determine the similarity between tow pieces of
+             text with a free{' '}
+            <Link href='/login' className="underline underline-offset-2 text-black dark:text-light-gold">
+              API Key
+            </Link>
+          </Paragraph>
+        </div>
+      </div>
+    </div>
   )
 }
