@@ -3,6 +3,8 @@ import React,{FC, useState} from 'react'
 
 import { signIn, signOut } from 'next-auth/react'
 import { Button } from './ui/Button'
+import { toast } from './ui/Toast'
+
 
 
 
@@ -16,11 +18,11 @@ const signOutWithGoogle = async() => {
     try {
         await signOut()
     } catch (error) {
-        // toast({
-        //     title:'error signing in',
-        //     message:'Plase try again later',
-        //     type: 'error'
-        // })
+        toast({
+            title:'error signing in',
+            message:'Plase try again later',
+            type: 'error'
+        })
     }
 }
 
