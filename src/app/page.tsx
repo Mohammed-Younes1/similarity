@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className="bg-red-500">
-     hello world <Paragraph size='sm'/>
+    <main className="">
+     <Paragraph size='sm'/>
     </main>
   )
 }
