@@ -28,7 +28,7 @@ const signOutWithGoogle = async() => {
 
   return (
     <Button onClick={signOutWithGoogle} isLoading={isLoading}>
-        Sign in
+        Sign Out
     </Button>
   )
   
