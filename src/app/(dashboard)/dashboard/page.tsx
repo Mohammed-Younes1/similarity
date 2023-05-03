@@ -1,9 +1,29 @@
-import React,{FC} from 'react'
+import React, { FC } from "react";
+import type { Metadata } from "next";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { notFound } from "next/navigation";
+import { db } from "@/lib/db";
+import ApiDashboard from "@/components/ApiDashboard";
+import RequestApiKey from "@/components/RequestApiKey";
 
-interface pageProps {}
+export const metadata: Metadata = {
+  title: "Smiilarity API | Dashboard",
+  description: "Free & open-source text similarity API",
+};
 
-const page:FC<pageProps> = ({}) => {
-  return <div>page</div>
-}
+const page = async () => {
+  const user = await getServerSession(authOptions);
+  if (!user) return notFound();
 
-export default page
+  const apiKey = await db.apiKey.findFirst({
+    where: { userId: user.user.id, enabled: true },
+  });
+  return (
+    <div className="max-W-7xl mx-auto mt mt-16">
+      {apiKey ? <ApiDashboard /> : <RequestApiKey />}
+    </div>
+  );
+};
+
+export default page;
