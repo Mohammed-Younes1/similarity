@@ -2,8 +2,7 @@
 
 import * as React from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
-
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
 const Tabs = TabsPrimitive.Root
 
@@ -45,7 +44,7 @@ const TabsContent = React.forwardRef<
     className={cn(
       'mt-2 rounded-md border border-slate-300 bg-slate-100 p-6 dark:border-slate-700 dark:bg-slate-900',
       className
-    )}
+    )}//css is not rendering for the content border
     {...props}
     ref={ref}
   />

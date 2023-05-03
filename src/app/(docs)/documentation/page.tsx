@@ -14,10 +14,10 @@ export const metadata:Metadata={
 }
 const page:FC = () => {
   return (
-    <div className='container max-w-7xl mx-auto'>
+    <div className='container max-w-7xl mx-auto mt-12'>
         <div className='flex flex-col items-center gap-6'>
-            <LargeHeading>making a request</LargeHeading>
-            <Paragraph className='text-bold'>api/v1/similarity</Paragraph>
+            <LargeHeading>Making a request</LargeHeading>
+            <Paragraph className='text-bold '>api/v1/similarity</Paragraph>
 
             <DocumentationTabs />
         </div>
