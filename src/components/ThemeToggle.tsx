@@ -5,8 +5,18 @@ import { Button } from '@/components/ui/Button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger,DropdownMenuItem } from './ui/dropdown-menu'
 import { Icons } from './Icons'
 
-export function ThemeToggle() {
-  const { setTheme } = useTheme()
+ const ThemeToggle = ()=> {
+  const [mounted, setMounted] = React.useState(false)
+  const {  setTheme } = useTheme()
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <DropdownMenu>
@@ -34,3 +44,5 @@ export function ThemeToggle() {
     </DropdownMenu>
   )
 }
+
+export default ThemeToggle

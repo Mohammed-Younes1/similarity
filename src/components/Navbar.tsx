@@ -1,12 +1,14 @@
+// 'use client
 import { getServerSession } from "next-auth";
 import Link from "next/link";
 import React from "react";
 import SignOutButton from "@/components/SignOutButton";
 import SignInButton from "@/components/SignInButton";
-import { ThemeToggle } from "./ThemeToggle";
 import { buttonVariants } from "./ui/Button";
 import { authOptions } from "@/lib/auth";
+import dynamic from "next/dynamic";
 
+const ThemeToggle = dynamic(() => import('./ThemeToggle'), { ssr: false });
 
 const Navbar = async () => {
   const session = await getServerSession(authOptions)
