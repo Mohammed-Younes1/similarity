@@ -30,7 +30,10 @@ const Navbar = async () => {
           >
             documentation
           </Link>
-          {session ? (
+          
+        </div>
+      </div>
+      {session ? (
             <>
               <Link
                 className={buttonVariants({ variant: "ghost" })}
@@ -43,8 +46,6 @@ const Navbar = async () => {
           ) : (
             <SignInButton />
           )}
-        </div>
-      </div>
     </div>
   );
 };
