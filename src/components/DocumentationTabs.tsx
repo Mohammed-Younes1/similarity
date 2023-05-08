@@ -16,12 +16,12 @@ const DocumentationTabs: FC = () => {
         <TabsTrigger value="python">Python</TabsTrigger>
       </TabsList>
       <TabsContent value="nodejs">
-        <SimpleBar>
+        <SimpleBar className='mt-2 rounded-md border border-slate-300 bg-slate-100 p-6 dark:border-slate-700 dark:bg-slate-900'>
           <Code animated language="javascript" code={nodejs} show />
         </SimpleBar>
       </TabsContent>
       <TabsContent value="python">
-        <SimpleBar>
+        <SimpleBar className='mt-2 rounded-md border border-slate-300 bg-slate-100 p-6 dark:border-slate-700 dark:bg-slate-900'>
           <Code animated language="python" code={python} show />
         </SimpleBar>
       </TabsContent>

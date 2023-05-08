@@ -53,7 +53,7 @@ const Code: FC<CodeProps> = ({
           className={
             className +
             'transition-all w-fit bg-transparent duration-100 py-0 no-scrollbar'
-          }
+          }//mt-2 rounded-md border border-slate-300 bg-slate-100 dark:border-slate-700 mt-2 p-6 dark:bg-slate-900 transition-all w-fit bg-transparent duration-100 py-0 no-scrollbar
           style={{
             maxHeight: show ? lines * 24 : 0,
             opacity: show ? 1 : 0,
